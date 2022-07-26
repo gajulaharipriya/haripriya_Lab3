@@ -1,23 +1,24 @@
-package com.hari.treesum;
+package com.hari.balancebracket.main;
+
+import com.hari.balancebracket.service.BalancingBrackets;
 
 public class Driver {
 
-
 	public static void main(String[] args) {
 		
+		BalancingBrackets balancingBrackets = new BalancingBrackets();
+		String bracketExpression = "([[]])";
+
 		
-		Node root = null;
-		FindSumPair findSP = new FindSumPair();
-		root = findSP.insert(root,40);
-		root = findSP.insert(root,20);
-		root = findSP.insert(root,60);
-		root = findSP.insert(root,10);
-		root = findSP.insert(root,30);
-		root = findSP.insert(root,50);
-		root = findSP.insert(root,70);
+		Boolean result;
 		
-		int sum = 80;
-		findSP.findPairWithGivenSum(root,sum);
+		result = balancingBrackets.checkingBracketsBalanced(bracketExpression);
+        
+		if (result)
+			System.out.println("The entered String has Balanced Brackets"); 
+		else
+			System.out.println("The entered Strings do not contain Balanced Brackets ");
+
 	}
 
 }
